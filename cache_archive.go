@@ -36,7 +36,7 @@ func NewArchive(pth string, compress bool) (*Archive, error) {
 	var tarWriter *tar.Writer
 	var gzipWriter *gzip.Writer
 	if compress {
-		gzipWriter, err = gzip.NewWriterLevel(file, gzip.BestCompression)
+		gzipWriter, err = gzip.NewWriterLevel(file, gzip.BestSpeed)
 		if err != nil {
 			return nil, err
 		}
