@@ -84,6 +84,7 @@ func (a *Archive) writeOne(pth string) error {
 
 	header.Name = pth
 	header.ModTime = info.ModTime()
+	header.Format = tar.FormatPAX
 
 	if err := a.tar.WriteHeader(header); err != nil {
 		return fmt.Errorf("failed to write header(%v), error: %s", header, err)
